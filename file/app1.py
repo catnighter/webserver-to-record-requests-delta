@@ -6,7 +6,7 @@ file_result = "/var/www/app1/rec.txt"
 
 @app.route("/")
 def index():
-  return "reply from app1.py -mod1"
+  return "Web Server to return delta between HTTP requests <btr> use uris /test /report /report2 /reset"
 
 @app.route("/test")
 def test():
@@ -70,8 +70,8 @@ def reset():
   f0.write("")
   f0.flush()
   f0.close()
-  res = "Record file " + file_result + " was reset to null."
-  return(res)
+  response = "Record file " + file_result + " was reset to null."
+  return(response)
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0" ,port=5000)
